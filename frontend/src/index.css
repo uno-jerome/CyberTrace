@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen font-sans transition-colors duration-200 antialiased;
+  }
+
+  /* Custom cybersecurity scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  .dark ::-webkit-scrollbar-track {
+    background: #020617;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
+}
+
+@layer components {
+  /* Surface / Card styling */
+  .cyber-card {
+    @apply bg-white border border-slate-200 text-slate-900 shadow-sm dark:bg-slate-900 dark:border-slate-800 dark:text-slate-100 rounded-xl transition-colors duration-200;
+  }
+
+  .cyber-card-interactive {
+    @apply bg-white border border-slate-200 text-slate-900 shadow-sm hover:border-slate-300 hover:bg-slate-50 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-100 rounded-xl dark:hover:border-slate-700 dark:hover:bg-slate-800/80 transition-all duration-200;
+  }
+
+  /* Form Inputs & Selects */
+  .cyber-input {
+    @apply bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent dark:bg-slate-950 dark:border-slate-800 dark:text-slate-100 dark:placeholder-slate-500 rounded-lg px-4 py-2.5 transition-all;
+  }
+
+  /* Primary & Ghost buttons */
+  .cyber-btn-primary {
+    @apply bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-4 py-2.5 rounded-lg shadow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2;
+  }
+
+  .cyber-btn-secondary {
+    @apply bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 shadow-sm dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-200 dark:border-slate-700 dark:shadow-none px-4 py-2.5 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2;
+  }
+
+  /* Verified Status Token */
+  .badge-verified {
+    @apply bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-400 dark:border-emerald-500/20 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5;
+  }
+
+  /* Tampered Alert Token */
+  .badge-tampered {
+    @apply bg-rose-50 text-rose-700 border border-rose-200 dark:bg-rose-500/10 dark:text-rose-400 dark:border-rose-500/30 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 animate-pulse;
+  }
+
+  /* Monospace hash pill */
+  .cyber-hash {
+    @apply font-mono text-xs bg-slate-100 px-2.5 py-1 rounded border border-slate-200 text-indigo-700 dark:bg-slate-950/80 dark:border-slate-800/80 dark:text-indigo-300 select-all;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
